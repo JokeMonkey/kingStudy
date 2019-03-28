@@ -1,5 +1,6 @@
 package com.jcy.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -7,17 +8,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DateUtils {
-    public static void main(String[] args) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // 设置时间格式
+    public static void main(String[] args) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); // 设置时间格式
         
-        Map<String, Date> date = convertWeekByDate(new Date());
-        Date monday = date.get("monday");
-        Date sunday = date.get("sunday");
-        
-        System.out.println("星期一：" + sdf.format(setUpDateDetail(monday, 0, 0, 0)));
-        System.out.println("星期日：" + sdf.format(setUpDateDetail(sunday, 23, 59, 59)));
+        Date date = sdf.parse("2018-11-19");
+        System.out.println("第" + dayOfWeek(date) + "天");
     }
-
+    
+    /**
+     * 获取时间对应当周的周一与周日
+     * 
+     * @param time
+     * @return Map<String, Date>
+     * 
+     * */
     public static Map<String, Date> convertWeekByDate(Date time) {
         Map<String, Date> resut = new HashMap<>();
         
@@ -42,7 +46,29 @@ public class DateUtils {
         return resut;
     }
     
+    /**
+     * 获取改时间为这周的第几天,周一为第一天
+     * 
+     * */
+    public static int dayOfWeek(Date time){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(time);
+        // 判断要计算的日期是否是周日，如果是则减一天计算周六的，否则会出问题，计算到下一周去了
+        int dayWeek = cal.get(Calendar.DAY_OF_WEEK);// 获得传入日期是一个星期的第几天
+        if(1 == dayWeek){
+            return 7;
+        }
+        return dayWeek - 1;
+    }
     
+    /**
+     * 设置时间的时分秒
+     * 
+     * @param Date
+     * @param int
+     * @param int
+     * @return Date
+     * */
     public static Date setUpDateDetail(Date date, int hour, int minute, int second){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);

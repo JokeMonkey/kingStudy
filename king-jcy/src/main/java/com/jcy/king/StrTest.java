@@ -23,46 +23,50 @@ public class StrTest {
         //System.out.println(sumNum(100));
         
         
-        List<User> users = new ArrayList<>();
-        User u1 = new User();
-        u1.setId(1);
-        u1.setName("Tom");
-        u1.setSex("M");
-        
-        User u2 = new User();
-        u2.setId(1);
-        u2.setName("Tom");
-        u2.setSex("M");
-        
-        User u3 = new User();
-        u3.setId(2);
-        u3.setName("Jetty");
-        u3.setSex("M");
-        
-        User u4 = new User();
-        u4.setId(3);
-        u4.setName("jack");
-        u4.setSex("M");
-        
-        users.add(u1);
-        users.add(u2);
-        users.add(u3);
-        users.add(u4);
-        
-        //将不重复的数据放在新的集合中
-        List<User> temp = new ArrayList<>();
-        //存放唯一值，例如User中的id为唯一值 
-        Set<Integer> unique = new HashSet<>();
-        for(User user : users){
-            if(!unique.contains(user.getId())){
-                unique.add(user.getId());
-                temp.add(user);
-            }
+//        List<User> users = new ArrayList<>();
+//        User u1 = new User();
+//        u1.setId(1);
+//        u1.setName("Tom");
+//        u1.setSex("M");
+//        
+//        User u2 = new User();
+//        u2.setId(1);
+//        u2.setName("Tom");
+//        u2.setSex("M");
+//        
+//        User u3 = new User();
+//        u3.setId(2);
+//        u3.setName("Jetty");
+//        u3.setSex("M");
+//        
+//        User u4 = new User();
+//        u4.setId(3);
+//        u4.setName("jack");
+//        u4.setSex("M");
+//        
+//        users.add(u1);
+//        users.add(u2);
+//        users.add(u3);
+//        users.add(u4);
+//        
+//        //将不重复的数据放在新的集合中
+//        List<User> temp = new ArrayList<>();
+//        //存放唯一值，例如User中的id为唯一值 
+//        Set<Integer> unique = new HashSet<>();
+//        for(User user : users){
+//            if(!unique.contains(user.getId())){
+//                unique.add(user.getId());
+//                temp.add(user);
+//            }
+//        }
+//        //输出新的集合
+//        for(User user : temp){
+//            System.out.println("id:" + user.getId());
+//        }
+        for(int i = 0; i < 10000; i++){
+            System.out.println(Math.random()); 
         }
-        //输出新的集合
-        for(User user : temp){
-            System.out.println("id:" + user.getId());
-        }
+        
     }
     
     public static int sumNum(int num){

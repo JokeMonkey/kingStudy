@@ -3,7 +3,10 @@ package com.jcy.king;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -37,6 +40,7 @@ import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.highlight.HighlightField;
 import org.elasticsearch.search.sort.SortOrder;
+import org.joda.time.DateTime;
 
 import com.alibaba.fastjson.JSON;
 
@@ -50,30 +54,49 @@ public class App
     private static TransportClient client;
     
     
-    static {
-        System.out.println("初始化链接。。。");
-        Map<String, String> map = new HashMap<>();  
-        map.put("cluster.name", "my_home");  
-        Settings.Builder settings = Settings.builder().put(map);  
-        
-        try {
-            client = TransportClient.builder().settings(settings).build()  
-                            .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), Integer.parseInt("9300")));
-            List<DiscoveryNode> nodes = client.connectedNodes();
-            
-            for (DiscoveryNode node : nodes) {
-                System.out.println(node.getHostAddress());
-            }
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        } 
-    }
+//    static {
+//        System.out.println("初始化链接。。。");
+//        Map<String, String> map = new HashMap<>();  
+//        map.put("cluster.name", "my_home");  
+//        Settings.Builder settings = Settings.builder().put(map);  
+//        
+//        try {
+//            client = TransportClient.builder().settings(settings).build()  
+//                            .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"), Integer.parseInt("9300")));
+//            List<DiscoveryNode> nodes = client.connectedNodes();
+//            
+//            for (DiscoveryNode node : nodes) {
+//                System.out.println(node.getHostAddress());
+//            }
+//        } catch (NumberFormatException e) {
+//            e.printStackTrace();
+//        } catch (UnknownHostException e) {
+//            e.printStackTrace();
+//        } 
+//    }
     
     
     public static void main(String[] args) throws Exception {
-        testPreference();
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date endDate = sdf.parse("2019-02-21 23:59:59");
+//        System.out.println(endDate.getTime() - new Date().getTime());
+//        
+//        System.out.println(new Date().getTime());
+//        
+//        System.out.println(sdf.format(new Date(1550764800000L)));
+//        
+//        for(int i = 0; i < 3; i++){
+//            Long unixTime = DateTime.now().plusDays(1).withTimeAtStartOfDay().getMillis() / 1000;
+//            System.out.println(unixTime);
+//            Thread.sleep(100);
+//        }
+        
+        List<String> list = new LinkedList<>();
+        list.add("111");
+        list.add("222");
+        list.add("333");
+        
+        System.out.println(list.get(2));
     }
     
     /**
