@@ -69,7 +69,7 @@ public class ReverseLinked {
 	
 	
 	
-	static class Node<T> {
+	public static class Node<T> {
 
 		public T value;
 
