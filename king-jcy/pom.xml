@@ -24,7 +24,7 @@
     <dependency>
 		<groupId>org.elasticsearch</groupId>
 		<artifactId>elasticsearch</artifactId>
-		<version>2.4.1</version>
+		<version>6.8.13</version>
 	</dependency>  
 
 	<!-- fastjson升级，防止内存泄漏，20170317 -->
