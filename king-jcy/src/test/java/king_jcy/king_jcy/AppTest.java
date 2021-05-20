@@ -1,17 +1,30 @@
 package king_jcy.king_jcy;
 
 import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class AppTest {
 	
+	
+	
 	public static void main(String[] args) {
-		ConcurrentHashMap<String, String> cmap = new ConcurrentHashMap<>();
+		ReentrantLock lock = new ReentrantLock();
 		
-		cmap.size();
+		lock.tryLock();
+		
+		lock.lock();
+		
+		lock.unlock();
+		
+		HashMap<String, String> hashMap = new HashMap<>();
+		hashMap.put("key", "value");
 		
 		
-		HashMap<String, String> map = new HashMap<>();
+		TreeMap<String, String> treeMap = new TreeMap<>();
+		treeMap.put("key", "value");
+		
 	}
 	
 }
