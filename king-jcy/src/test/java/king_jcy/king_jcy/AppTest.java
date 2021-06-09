@@ -51,6 +51,12 @@ public class AppTest {
 		
 		
 		lock.unlock();
+		
+		
+		
+		String aa = "123456";
+		
+		
 	}
 	
 }
