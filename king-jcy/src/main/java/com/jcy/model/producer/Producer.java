@@ -1,4 +1,4 @@
-package com.jcy.model;
+package com.jcy.model.producer;
 
 
 /**

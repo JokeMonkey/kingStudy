@@ -1,4 +1,4 @@
-package com.jcy.model;
+package com.jcy.model.producer;
 
 public class MiddlewareChannel {
 	public int init_capacity=0;//初始存储  
