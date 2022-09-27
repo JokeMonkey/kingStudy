@@ -1,4 +1,4 @@
-package com.king.ycu.loader;
+package com.jcy.hotloading;
 
 import lombok.Data;
 

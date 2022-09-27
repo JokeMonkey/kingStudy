@@ -1,4 +1,4 @@
-package com.king.ycu.loader;
+package com.jcy.hotloading;
 
 import java.io.File;
 import java.util.HashMap;
@@ -17,9 +17,9 @@ public class ManagerFactory {
     private static final Map<String, LoadInfo> loadClassMap = new HashMap<>();
 
     /* 加载类的classPath */
-    private static final String CLASS_PATH = "/Users/wangyaoyao/workSpace/flink-demo/target/classes/";
+    private static final String CLASS_PATH = "/Users/wangyaoyao/workSpace/kingStudy/king-jcy/target/classes/";
     /* 实现热加载 类的全路径 */
-    public static final String MY_MANAGER = "com.king.ycu.loader.MyManager";
+    public static final String MY_MANAGER = "com.jcy.hotloading.MyManager";
 
     /* 开始加载类 */
     public static Manager getManager(String className){
