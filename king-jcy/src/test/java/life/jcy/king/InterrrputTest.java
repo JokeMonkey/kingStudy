@@ -2,6 +2,14 @@ package life.jcy.king;
 
 public class InterrrputTest {
 	public static void main(String[] args) {
+
+		/*
+		* interrupt  线程中设置终止状态，并非把线程进行终止
+		* isInterrupted  返回线程的终止状态
+		* interrupted 当前线程是否被终止，被清除终止状态
+		* */
+
+
 		//testIsInterrupted();
 		//testInterrupted();
 		//testInterrupted1();
@@ -18,7 +26,8 @@ public class InterrrputTest {
 		Thread thread = new Thread(MyInterrupt);
 		thread.start();
 		thread.interrupt();
-		
+
+
 		System.out.println("第一次调用isInterrupted：" + thread.isInterrupted());
 		System.out.println("第二次调用isInterrupted：" + thread.isInterrupted());
 		System.out.println("thread是否存活：" + thread.isAlive());
@@ -61,6 +70,7 @@ public class InterrrputTest {
 		System.out.println("第二次调用isInterrupted：" + Thread.currentThread().isInterrupted());
 		System.out.println("第一次调用interrupt：" + Thread.currentThread().interrupted());//调用清除中断状态并返回true
 		System.out.println("第二次调用interrupt：" + Thread.currentThread().interrupted());
+		System.out.println("第三次调用interrupt：" + Thread.currentThread().interrupted());
 	}
 	
 	
